@@ -1,8 +1,10 @@
-//FUNCIONOU
 package application;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,18 +48,20 @@ public class Program {
 					list.add(rl);
 					rl = br.readLine();
 				}
-			}
+			}			
+			File instantiatePath = new File(filePath);
 			
-			list.forEach(System.out::println);
-			/*
-			try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true))){
+			String saveModifiedFile = instantiatePath.getParent() + "\\newgltPabx.txt";
 			
-				
-			
+			try (BufferedWriter bw = new BufferedWriter(new FileWriter(saveModifiedFile))){			
+				for(String line : list) {
+					bw.write(line);
+					bw.newLine();
+				}	
 			}
 			catch (IOException e){
 				System.out.println("Erro: " + e);
-			}*/
+			}
 		}
 		catch (IOException e){
 			System.out.println("Erro: " + e);

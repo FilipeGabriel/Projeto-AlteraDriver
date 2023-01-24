@@ -6,6 +6,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -48,10 +51,25 @@ public class Program {
 					list.add(rl);
 					rl = br.readLine();
 				}
-			}			
+			}
+			
+			Integer nameDriverNumber = 0;
+			
 			File instantiatePath = new File(filePath);
 			
 			String saveModifiedFile = instantiatePath.getParent() + "\\newgltPabx.txt";
+			
+			Path getFilePath = Paths.get(saveModifiedFile);
+			
+			boolean exist = Files.exists(getFilePath);
+					
+				for(int i=0; exist == true; i++) {
+					nameDriverNumber = i;
+					saveModifiedFile = instantiatePath.getParent() + "\\newgltPabx" + nameDriverNumber + ".txt";
+				
+					getFilePath = Paths.get(saveModifiedFile);
+					exist = Files.exists(getFilePath);
+				}		
 			
 			try (BufferedWriter bw = new BufferedWriter(new FileWriter(saveModifiedFile))){			
 				for(String line : list) {

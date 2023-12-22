@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="110.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ViewController">
+   <children>
+      <Label layoutX="24.0" layoutY="27.0" text="Insira o caminho do driver" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="17.0" />
+      <TextField fx:id="textFieldPath" layoutX="24.0" layoutY="52.0" onAction="#onTextFieldPathAction" prefHeight="25.0" prefWidth="470.0" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="42.0" />
+      <Button fx:id="modfyButton" layoutX="494.0" layoutY="42.0" mnemonicParsing="false" onAction="#onModfyButtonAction" text="Modificar" AnchorPane.leftAnchor="494.0" AnchorPane.topAnchor="42.0" />
+      <Label layoutX="24.0" layoutY="73.0" text="Exemplo: C:\Programas\Arquivos\driver.txt" textFill="#a8a5a5" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="73.0">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
